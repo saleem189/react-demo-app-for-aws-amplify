@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import NavBar from './components/Navbar';
+import Carosal from './components/Carosal';
+import Search from './components/Search';
+import MovieCard from './components/MovieCard';
+import { useState } from 'react';
+import Memo from './components/Memo';
 
 function App() {
+  const [movieCardData, setMovieCardData] = useState({});
+  const [showMovieCard, setShowMovieCard] =useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Container fluid>
+      <NavBar />
+    </Container>
+
+
+
+
+    <Container className='mt-3'>
+      <Search setMovieCardData={setMovieCardData} setShowMovieCard={setShowMovieCard}/>
+    </Container>
+    <Container>
+      
+      {showMovieCard ? <MovieCard Title={movieCardData.Title} Poster={movieCardData.Poster} Plot={movieCardData.Plot} Released={movieCardData.Released} Ratings={JSON.stringify(movieCardData.Ratings, null, 2)} Actors={JSON.stringify(movieCardData.Actors, null, 2)}/> : null}
+    </Container> */}
+
+    <Container>
+      <Memo/>
+    </Container>
+    </>
   );
 }
 
